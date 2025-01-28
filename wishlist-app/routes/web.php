@@ -1,11 +1,18 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WishController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', function () {
+    return "yo";
+});
+
+Route::get('/wishlist', [WishController::class, 'Index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
