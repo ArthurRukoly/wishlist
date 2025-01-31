@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('wishes', function (Blueprint $table) {
             $table->id();
+            $table->string("productName");
+            $table->string("link");
+            $table->string("imageUrl");
             $table->timestamps();
         });
     }
