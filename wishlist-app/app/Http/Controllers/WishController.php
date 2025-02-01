@@ -45,4 +45,20 @@ class WishController extends Controller
             );
         dd($wish);
     }
+
+    public function delete(){
+        $wish = Wish::find(2);
+
+        $wish->delete();
+
+        dd("deleted");
+    }
+
+    public function restore(){
+        $wish = Wish::withTrashed()->find(2);
+
+        $wish->restore();
+
+        dd("restored");
+    }
 }

@@ -18,6 +18,13 @@ Route::get('/wishlist/create', [WishController::class, 'Create']);
 
 Route::get('/wishlist/update', [WishController::class, 'Update']);
 
+Route::get('/wishlist/delete', [WishController::class, 'Delete']);
+
+
+Route::get('/wishlist/restore', [WishController::class, 'Restore']);
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
