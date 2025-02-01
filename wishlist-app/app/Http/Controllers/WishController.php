@@ -8,7 +8,10 @@ use Illuminate\Http\Request;
 class WishController extends Controller
 {
     public function index(){
-        
+        $wishes = Wish::all();
+        foreach($wishes as $wish){
+            dd($wish);
+        }
     }
 
     public function create(){
@@ -24,6 +27,22 @@ class WishController extends Controller
                 'imageUrl' => 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3017860/header.jpg?t=1738262840'
             ],
         ];
-        Wish::create($wishArr);
+
+        foreach ($wishArr as $wish){
+            Wish::create($wish);
+        }   
+
+        dd("created");
+    }
+
+    public function update(){
+        $wish = Wish::find(2);
+        
+        $wish->update(
+            [
+                'ProductName' => 'updated'
+            ]
+            );
+        dd($wish);
     }
 }

@@ -14,6 +14,10 @@ Route::get('/home', function () {
 
 Route::get('/wishlist', [WishController::class, 'Index']);
 
+Route::get('/wishlist/create', [WishController::class, 'Create']);
+
+Route::get('/wishlist/update', [WishController::class, 'Update']);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

@@ -8,4 +8,5 @@ class Wish extends Model
 {
     
     protected $table = 'wishes';
+    protected $guarded = [];
 }
