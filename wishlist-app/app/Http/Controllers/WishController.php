@@ -49,6 +49,7 @@ class WishController extends Controller
     public function delete(){
         $wish = Wish::find(2);
 
+
         $wish->delete();
 
         dd("deleted");
@@ -65,7 +66,7 @@ class WishController extends Controller
     
     public function orCreate(){
         $wish = Wish::firstOrCreate([
-            'productName' => 'Baldur Gate II' 
+            'productName' => 'Baldur\'s Gate II' 
         ], [
             'productName' => 'Baldur\'s Gate II',
             'link' => 'https://store.steampowered.com/app/1086940/Baldurs_Gate_3/',
