@@ -20,9 +20,9 @@ Route::get('/wishlist/update', [WishController::class, 'Update']);
 
 Route::get('/wishlist/delete', [WishController::class, 'Delete']);
 
-
 Route::get('/wishlist/restore', [WishController::class, 'Restore']);
 
+Route::get('/wishlist/orCreate', [WishController::class, 'orCreate']);
 
 
 Route::get('/dashboard', function () {
